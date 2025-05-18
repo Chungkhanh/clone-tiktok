@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TikTok Shop Clone</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <img src="image/logo.jpg" alt="TikTok Shop" class="logo">
+      <input type="quan" placeholder="Search" class="search">
+      <img src="image/cart.jpg" alt="Giỏ hàng" class="cart">
+    </header>
+
+    
+
+      <div class="image-slider">
+  <div class="slider-wrapper">
+    <img src="image/2.webp" class="slider-image" alt="Ảnh 1">
+    <img src="image/2.webp" class="slider-image" alt="Ảnh 2">
+    <img src="image/2.webp" class="slider-image" alt="Ảnh 3">
+    <!-- Thêm ảnh khác tùy ý -->
+  </div>
+  <div class="image-count">1 / <span id="total-images">3</span></div>
+  <button class="prev" onclick="prevImage()">&#10094;</button>
+  <button class="next" onclick="nextImage()">&#10095;</button>
+</div>
+
+<div class="flash-deal">
+  <div class="deal-left">
+    <div class="price">
+      <img src="image/icons8-voucher-32.png" alt="Voucher" />
+      <span class="current">150,000đ</span>
+    </div>
+    <div class="old">
+      <span class="old-price">195,000đ</span>
+      <span class="discount">-23%</span>
+    </div>
+  </div>
+  <div class="deal-right">
+    <p class="title"><span class="icon">⚡</span> Ưu đãi giờ vàng</p>
+    <p class="countdown">Kết thúc sau <span id="timer">00:43:10</span></p>
+  </div>
+</div>
+
+      <div class="price-section">
+        <span class="current-price">119.000đ</span>
+        <span class="old-price">249.000đ</span>
+        <span class="discount">Tiết kiệm 52%</span>
+      </div>
+
+      <p class="product-name">
+        Combo 2 Áo Polo Cotton Nam nữ logo thêu JULIDO Form Regular Ngắn Tay
+      </p>
+
+      <div class="seller">
+        <span>Được bán bởi <strong>@julido</strong></span>
+        <span class="rating">⭐ 4.6 (716) |  Đã bán 10.6k</span>
+      </div>
+
+ <div class="product-details">
+  <!-- Dòng này sẽ được click để ẩn/hiện -->
+  <div class="detail-row" id="toggle-options">
+    <span><strong>Chọn tùy chọn</strong></span>
+    <span class="detail-value">Màu / Kích cỡ</span>
+  </div>
+
+  <!-- Phần này ẩn lúc đầu, sẽ hiện ra khi click -->
+  <div class="product-options" id="options-box" style="display: none;">
+    <p><strong>Chọn màu sắc:</strong></p>
+    <div class="color-options">
+      <label><input type="radio" name="color" value="Đen"> Đen</label>
+      <label><input type="radio" name="color" value="Trắng"> Trắng</label>
+      <label><input type="radio" name="color" value="Xám"> Xám</label>
+      <label><input type="radio" name="color" value="Tím than"> Tím than</label>
+    </div>
+
+    <p style="margin-top: 10px;"><strong>Chọn kích cỡ:</strong></p>
+    <div class="size-options">
+      <label><input type="radio" name="size" value="S"> S</label>
+      <label><input type="radio" name="size" value="M"> M</label>
+      <label><input type="radio" name="size" value="L"> L</label>
+      <label><input type="radio" name="size" value="XL"> XL</label>
+    </div>
+  </div>
+
+  <div class="detail-row">
+    <div>
+      <strong>Vận chuyển</strong><br>
+      <small class="subtext">Dự kiến giao hàng vào ngày 17 tháng 5 - 18 tháng 5</small>
+    </div>
+    <span class="detail-value">Từ 35.500đ</span>
+  </div>
+  <div class="detail-row" onclick="togglePolicy(this)">
+    <span><strong>Chính sách đổi trả</strong></span>
+    <span class="detail-value">></span>
+  </div>
+  <div class="policy-content">
+    - Đổi trả trong vòng 7 ngày kể từ ngày nhận hàng<br>
+    - Sản phẩm chưa qua sử dụng, còn tem mác, bao bì<br>
+    - Liên hệ với shop để được hướng dẫn chi tiết<br>
+    - Phí vận chuyển đổi trả do khách hàng chịu nếu không phải lỗi của shop
+  </div>
+  <!-- Dòng mở rộng đánh giá -->
+  <div class="detail-row" onclick="toggleReview(this)">
+    <span><strong>Đánh giá của khách hàng</strong></span>
+    <span class="detail-value">></span>
+  </div>
+
+  <!-- Nội dung đánh giá -->
+  <div class="review-section">
+    <div class="review">
+      <div class="reviewer-name">Nguyễn Văn A</div>
+      <div class="review-stars">★★★★★</div>
+      <div>Sản phẩm chất lượng, vải mềm mịn, đáng tiền!</div>
+      <div class="review-images">
+        <img src="image/dg1.webp" alt="Review A1">
+        <img src="image/dg2.webp" alt="Review A2">
+      </div>
+    </div>
+    
+    <div class="review">
+      <div class="reviewer-name">Trần Thị B</div>
+      <div class="review-stars">★★★★★</div>
+      <div>Áo đẹp đúng mô tả, giao hàng nhanh, sẽ mua thêm!</div>
+      <div class="review-images">
+        <img src="image/dg3.webp" alt="Review B1">
+      </div>
+    </div>
+    
+    <div class="review">
+      <div class="reviewer-name">Lê Minh C</div>
+      <div class="review-stars">★★★★★</div>
+      <div>Form đẹp, màu sắc chuẩn, shop phục vụ tốt.</div>
+      <div class="review-images">
+        <img src="image/dg4.webp" alt="Review C1">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <div class="shop-card">
+    <div class="shop-logo">❤</div>
+
+    <div class="shop-info">
+      <div class="shop-header">
+        <div>
+          <span class="shop-name">Shop Thời trang NVA</span>
+          <span class="shop-rating">★ 4.9</span>
+        </div>
+        <button class="shop-button">Truy cập</button>
+      </div>
+
+      <div class="shop-stats">
+        <div class="stat-item">25<br><small>Mặt hàng</small></div>
+        <div class="stat-item">87.2k<br><small>Đã bán</small></div>
+        <div class="stat-item">95%<span class="stat-highlight">Cao</span><br><small>Tỷ lệ trả lời 24 giờ</small></div>
+        <div class="stat-item">93%<br><small>Xuất kho trong 48 giờ</small></div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="product-detail">
+
+  <span class="highlight">🌞 THÔNG SỐ SẢN PHẨM:</span>
+  <ul>
+    <li><strong>Quần:</strong> Short Jeans NY</li>
+    <li><span class="check">✔</span>Màu sắc: trắng - đen - vàng - xanh than</li>
+    <li><span class="check">✔</span>Kiểu dáng: Cạp cao ngang rốn - phong cách</li>
+    <li><span class="check">✔</span>Size: S - L thoải mái lựa chọn</li>
+  </ul>
+
+  <h3>🛒 HƯỚNG DẪN CHỌN SIZE:</h3>
+  <div class="size-guide">
+    <ul>
+      <li>- Size S (40 - 45KG) <br> Eo: 55 - 63 cm</li>
+      <li>- Size M (46 - 50KG) <br> Eo: 63 - 67 cm</li>
+      <li>- Size L (51 - 55KG) <br> Eo: 68 - 72 cm</li>
+    </ul>
+  </div>
+
+</div>
+      
+    </main>
+    <footer class="actions">
+      <button class="open-btn">Mở TikTok</button>
+      <button class="shop-btn">Mua ngay</button>
+    </footer>
+  </div>
+  <script src="java.js"></script>
+</body>
+</html>
